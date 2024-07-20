@@ -11,4 +11,4 @@
 -   Initialization model training: `Initialization Diversity TXRV.py` and `Initialization Diversity TXRV MLP3.py` is based on original pixels+VGG and TXRV representations+MLP3, respectively. Other files follows the same naming method.
 
 ## Citation
-* Yuan, H., Zhu, M., Yang, R., ... & Hong, C. (2024). Clinical Domain Knowledge-Derived Template Improves Post Hoc AI Explanations in Pneumothorax Classification. arXiv preprint arXiv:2403.18871.
+* Yuan, H., Zhu, M., Yang, R., ... & Hong, C. (2024). Have Medical Foundation Models Mastered Versatile Knowledge towards Generalists? A Comparative Study against ImageNet Pre-trained Representations in Cold-Start Active Learning. arXiv preprint arXiv:2403.18871.
