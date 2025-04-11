@@ -1,6 +1,13 @@
 # Active-Learning-CXR-Classification
--   We compare
-> ### Please read our [article](https://arxiv.org/pdf/2403.18871) for further information.
+-   Objective
+Deep learning (DL) has become the prevailing method in chest radiograph analysis, yet its performance heavily depends on large quantities of annotated images. To mitigate the cost, cold-start active learning (AL), comprising an initialization followed by subsequent learning, selects a small subset of informative data points for labeling. Recent advancements in pretrained models by supervised or self-supervised learning tailored to chest radiograph have shown broad applicability to diverse downstream tasks. However, their potential in cold-start AL remains unexplored.
+-   Methods
+To validate the efficacy of domain-specific pretraining, we compared two foundation models: supervised TXRV and self-supervised REMEDIS with their general domain counterparts pretrained on ImageNet. Model performance was evaluated at both initialization and subsequent learning stages on two diagnostic tasks: psychiatric pneumonia and COVID-19. For initialization, we assessed their integration with three strategies: diversity, uncertainty, and hybrid sampling. For subsequent learning, we focused on uncertainty sampling powered by different pretrained models. We also conducted statistical tests to compare the foundation models with ImageNet counterparts, investigate the relationship between initialization and subsequent learning, examine the performance of one-shot initialization against the full AL process, and investigate the influence of class balance in initialization samples on initialization and subsequent learning.
+-   Results
+First, domain-specific foundation models failed to outperform ImageNet counterparts in six out of eight experiments on informative sample selection. Both domain-specific and general pretrained models were unable to generate representations that could substitute for the original images as model inputs in seven of the eight scenarios. However, pretrained model-based initialization surpassed random sampling, the default approach in cold-start AL. Second, initialization performance was positively correlated with subsequent learning performance, highlighting the importance of initialization strategies. Third, one-shot initialization performed comparably to the full AL process, demonstrating the potential of reducing experts' repeated waiting during AL iterations. Last, a U-shaped correlation was observed between the class balance of initialization samples and model performance, suggesting that the class balance is more strongly associated with performance at middle budget levels than at low or high budgets.
+-   Conclusions
+In this study, we highlighted the limitations of medical pretraining compared to general pretraining in the context of cold-start AL. We also identified promising outcomes related to cold-start AL, including initialization based on pretrained models, the positive influence of initialization on subsequent learning, the potential for one-shot initialization, and the influence of class balance on middle-budget AL. Researchers are encouraged to improve medical pretraining for versatile DL foundations and explore novel AL methods.
+> ### Please read our [article](https://onlinelibrary.wiley.com/doi/abs/10.1002/hcs2.70009) for further information.
 
 ## Overview
 -   Figure 1a shows the overview of our template guidance as a plug-and-play module for existing XAI methods.
@@ -11,4 +18,4 @@
 -   Initialization model training: `Initialization Diversity TXRV.py` and `Initialization Diversity TXRV MLP3.py` is based on original pixels+VGG and TXRV representations+MLP3, respectively. Other files follows the same naming method.
 
 ## Citation
-* Yuan, H., Zhu, M., Yang, R., ... & Hong, C. (2024). Have Medical Foundation Models Mastered Versatile Knowledge towards Generalists? A Comparative Study against ImageNet Pre-trained Representations in Cold-Start Active Learning. arXiv preprint arXiv:2403.18871.
+* Yuan, H., Zhu, M., Yang, R., ... & Hong, C. (2025). Rethinking Domain-Specific Pretraining by Supervised or Self-Supervised Learning for Chest Radiograph Classification: A Comparative Study Against ImageNet Counterparts in Cold-Start Active Learning. Health Care Science.
